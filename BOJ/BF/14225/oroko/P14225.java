@@ -28,6 +28,14 @@ public class P14225 {
         int set = (1 << N) - 1;
         boolean[] sums = new boolean[max + 1];
         for(int subset = set; subset > 0; subset = (subset - 1) & set) sums[sum(Integer.toBinaryString(subset), arr)] = true;
+        // 이렇게 할 수도 있음
+        /*for(int i = 0; i < 1 << N; i++) {     // 000 ~ 111 까지 부분집합에 대해서 탐색
+            int sum = 0;
+            for(int j = 0; j < N; j++) {
+                if(i & (1 << j) != 0) sum += arr[j];    // 해당 자리가 켜져있는지 확인
+            }
+            sums[sum] = true;
+        }*/
 
         int answer = 0;
         for(int i = 1; i <= max; i++) {
