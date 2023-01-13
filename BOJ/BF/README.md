@@ -10,7 +10,7 @@
 - [14225 부분수열의 합](https://www.acmicpc.net/problem/14225) `2회차`
 - [1062 가르침](https://www.acmicpc.net/problem/1062) `2회차`
 - [13460 구슬 탈출 2](https://www.acmicpc.net/problem/13460) `2회차`
-- [2048 (Easy)](https://www.acmicpc.net/problem/12100) `2회차 추가`
+- [12100 2048 (Easy)](https://www.acmicpc.net/problem/12100) `2회차 추가`
 
 ### 브루트 포스 - 기타
 - [2003번 - 수들의 합 2](https://www.acmicpc.net/problem/2003) `3회차`
