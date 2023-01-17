@@ -133,3 +133,4 @@ dmypy.json
 .vscode/
 input.txt
 timer.py
+template.md
