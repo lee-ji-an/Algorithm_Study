@@ -1,5 +1,5 @@
 ## Info
-[14442 벽 부수고 이동하기2](https://www.acmicpc.net/problem/14442)
+[14442 벽 부수고 이동하기 2](https://www.acmicpc.net/problem/14442)
 
 ## 💡 풀이 방법 요약
 [2206 벽 부수고 이동하기](https://www.acmicpc.net/problem/2206)와 매우 유사하게 풀이한다. 2206번에서는 경로를 진행하면서 벽을 부쉈는지 여부가 `bool` 형 변수로 표기되었다면, 이 문제에서는 `int` 형태로 내가 몇 개의 벽을 부쉈는지 유지해 주면 된다.  
