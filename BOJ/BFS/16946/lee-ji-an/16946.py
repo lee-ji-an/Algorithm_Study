@@ -61,7 +61,7 @@ for i in range(N):
 for i in range(N):
     for j in range(M):
         if board[i][j] > 1:  # 1보다 크다는 것은 공간 번호가 부여됐다는 것이므로 빈공간 -> 0출력
-            print(0, end="")g
+            print(0, end="")
         else:
             print(area(i, j) % 10, end="")  # 벽일때는 area 함수의 return 값
     print()
