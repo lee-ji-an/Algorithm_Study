@@ -45,9 +45,9 @@ def bfs(start: int, end: int):
                 test_num = num + (j - digit) * (10 ** i)
 
                 # 아직 방문하지 않았고, 1000이상의 소수라면
-                if (not visited[test_num] and (test_num in prime) and (test_num >= 1000)):
+                if (not visited[test_num] and (test_num in prime)):
                     visited[test_num] = True  # 방문 처리하고
-                    q.append([test_num, cnt + 1])  # 큐에 삽입
+                    q.append((test_num, cnt + 1))  # 큐에 삽입
     
     return None  # 목적지에 도달할 수 없는 경우
 
