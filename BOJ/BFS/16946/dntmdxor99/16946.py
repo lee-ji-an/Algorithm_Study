@@ -18,7 +18,8 @@ for i in range(n):
             dq.append([i, j])
             visited.append([i, j])      # 방문한 0의 좌표들을 모아놓음
             board[i][j] = -1        # 방문 표시함
-            while dq:
+            while dq:     
+                
                 cur_i, cur_j = dq.popleft()
                 for next_dir in dir:
                     next_i = cur_i + next_dir[0]
