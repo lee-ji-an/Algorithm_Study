@@ -10,6 +10,9 @@ dr = (1, -1, 0, 0)
 dc = (0, 0, 1, -1)
 move_night = ((-2, -1), (-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2))
 
+if ((W, H) == (1, 1)):
+    sys.exit(print(0))
+
 q = deque([(0, 0, 0)])  # row, col, jump
 visited[0][0] = 0
 cnt = 0
@@ -27,6 +30,8 @@ while (q):
 
                 if (0 <= n_row < H and 0 <= n_col < W):
                     if (visited[n_row][n_col] > jump+1 and matrix[n_row][n_col] == 0):
+                        if ((n_row, n_col) == (H-1, W-1)):
+                            sys.exit(print(cnt+1))
                         visited[n_row][n_col] = jump+1
                         q.append((n_row, n_col, jump+1))
             
@@ -37,6 +42,8 @@ while (q):
             if (0 <= n_row < H and 0 <= n_col < W):
                 # 빈 곳이고, 방문했을 때 최솟값 업데이트 가능한 경우
                 if (visited[n_row][n_col] > jump and matrix[n_row][n_col] == 0):
+                    if ((n_row, n_col) == (H-1, W-1)):
+                        sys.exit(print(cnt+1))
                     visited[n_row][n_col] = jump
                     q.append((n_row, n_col, jump))
         
