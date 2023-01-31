@@ -23,26 +23,28 @@ q.append((target[0][0], target[0][1], 0, None))
 visited[target[0][0]][target[0][1]] = 0
 
 while q:
-    # was_vertical : 이전의 움직임이 수직, 즉 상하 움직임이었는지의 True/False
-    cy, cx, curves, was_vertical = q.popleft()
+    # prev : 이전의 움직임
+    cy, cx, curves, prev = q.popleft()
 
     for i in range(4):
         ny = cy + dy[i]
         nx = cx + dx[i]
         if 0 <= nx < w and 0 <= ny < h:
-            if board[ny][nx] in ('.', 'C'):
-                # 이전이 None이거나 (첫 시행이거나), 이전이 수직이고 이번도 수직 or 이전이 수직이아니고 이번도 수직이아님
+            if board[ny][nx] != '*':
+                if prev is not None and i == 3 - prev:
+                    continue
+
+                # 이전이 None이거나 (첫 시행이거나), 이전과 같은 방향으로의 진행
                 # 이 경우에는 커브 횟수를 증가시키지 않고 넣는다
-                if (was_vertical is None) or ((was_vertical and i in (0, 3)) or (not was_vertical and i in (1, 2))):
-                    # 만약 더 적게 커브를 돌고 방문 가능하다면
-                    if visited[ny][nx] > curves:
+                if prev is None or i == prev:
+                    if visited[ny][nx] >= curves:
                         visited[ny][nx] = curves
-                        q.append((ny, nx, curves, True if i in (0, 3) else False))
-                # 이전이 수직이고 이번이 수직이아님 or 이전이 수직이아니고 이번이 수직
+                        q.append((ny, nx, curves, i))
+
+                # 이전과 다른 방향으로의 진행
                 else:
-                    # 만약 더 적게 커브를 돌고 방문 가능하다면
-                    if visited[ny][nx] > curves:
+                    if visited[ny][nx] >= curves + 1:
                         visited[ny][nx] = curves + 1
-                        q.append((ny, nx, curves + 1, True if i in (0, 3) else False))
+                        q.append((ny, nx, curves + 1, i))
 
 print(visited[target[1][0]][target[1][1]])
