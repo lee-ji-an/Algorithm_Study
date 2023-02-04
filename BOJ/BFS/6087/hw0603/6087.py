@@ -6,6 +6,7 @@ dc = (0, 0, 1, -1)
 W, H = map(int, sys.stdin.readline().split())
 board = [sys.stdin.readline().rstrip() for _ in range(H)]
 visited = [[sys.maxsize] * W for _ in range(H)]  # 해당 좌표에 도달하기 위한 경로의 선분 개수 (즉, 거울 개수 + 1)
+have_been_pushed = set()  # 중복 방문을 제거하기 위한 set
 
 # 시작 지점과 도착 지점 구함
 (s_row, s_col), (e_row, e_col) = [(i, j) for i in range(H) for j in range(W) if board[i][j] == 'C']
@@ -33,7 +34,10 @@ while (q):
             visited[n_row][n_col] = visited[row][col] + 1
             if ((n_row, n_col) == (e_row, e_col)):  # 목적지에 도착했으면 정답 출력 후 종료
                 sys.exit(print(visited[e_row][e_col]-1))
-            q.append((n_row, n_col))
+            
+            if ((n_row, n_col) not in have_been_pushed):
+                have_been_pushed.add((n_row, n_col))
+                q.append((n_row, n_col))
 
             # 같은 방향의 다음 좌표
             n_row, n_col = n_row + dr[i], n_col + dc[i]
