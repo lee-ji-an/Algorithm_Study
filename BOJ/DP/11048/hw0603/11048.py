@@ -1,6 +1,6 @@
 import sys
 
-d = ((-1, 0), (0, -1), (-1, -1))
+d = ((-1, 0), (0, -1))
 N, M = map(int, sys.stdin.readline().split())
 candy = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 dp = [[0]*M for _ in range(N)]
