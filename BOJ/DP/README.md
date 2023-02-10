@@ -11,3 +11,7 @@
 - [12869번 - 뮤탈리스크](https://www.acmicpc.net/problem/12869) `6-2`
 - [10422번 - 괄호](https://www.acmicpc.net/problem/10422) `6-2*`
 - [2293번 - 동전 1](https://www.acmicpc.net/problem/2293) `6-2*`
+
+- [2294번 - 동전 2](https://www.acmicpc.net/problem/2294) `7-1`
+- [11058번 - 크리보드](https://www.acmicpc.net/problem/11058) `7-1`
+- [9251번 - LCS](https://www.acmicpc.net/problem/9251) `7-1*`
