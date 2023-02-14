@@ -5,13 +5,17 @@
 - [10942번 - 팰린드롬?](https://www.acmicpc.net/problem/10942) `6-1`
 - [15989번 - 1, 2, 3 더하기 4](https://www.acmicpc.net/problem/15989) `6-1*`
 - [11066번 - 파일 합치기](https://www.acmicpc.net/problem/11066) `6-1*`
-
+---
 - [12865번 - 평범한 배낭](https://www.acmicpc.net/problem/12865) `6-2`
 - [1495번 - 기타리스트](https://www.acmicpc.net/problem/1495) `6-2`
 - [12869번 - 뮤탈리스크](https://www.acmicpc.net/problem/12869) `6-2`
 - [10422번 - 괄호](https://www.acmicpc.net/problem/10422) `6-2*`
 - [2293번 - 동전 1](https://www.acmicpc.net/problem/2293) `6-2*`
-
+---
 - [2294번 - 동전 2](https://www.acmicpc.net/problem/2294) `7-1`
 - [11058번 - 크리보드](https://www.acmicpc.net/problem/11058) `7-1`
 - [9251번 - LCS](https://www.acmicpc.net/problem/9251) `7-1*`
+---
+- [9252번 - LCS 2](https://www.acmicpc.net/problem/9252) `7-2`
+- [5582번 - 공통 부분 문자열](https://www.acmicpc.net/problem/5582) `7-2*`
+- [5557번 - 1학년](https://www.acmicpc.net/problem/5557) `7-2`
