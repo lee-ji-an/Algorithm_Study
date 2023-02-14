@@ -1,14 +1,18 @@
 ## Info
 
-[](https://www.acmicpc.net/problem/)
+[11058 크리보드](https://www.acmicpc.net/problem/11058)
 
 <br>
 
 ## 💡 풀이 방법 요약
 
-> 
+> dp[i] = max(dp[i-1]+1, dp[j] * (i-j-1), (2<=j<=i-3))
 
+* 순서가 있다. 즉, 무조건 복붙은 나중에 하는 것이 이득
+* 복붙한 걸 비교할 때, 앞의 j번째 중에 어떤걸 (i-j-2)번 붙일래를 생각해야 함
+* dp[j] + dp[j] * (i-j-2) = dp[j] * (i-j-1)
 
 <br>
 
 ## 🙂 느낀 점
+그냥 단순히 이전의 best에서 1개 붙이기, buffer의 것 붙이기, 복붙하기 중에 골라서 될 문제가 아니었다 ...
