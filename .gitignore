@@ -134,3 +134,6 @@ dmypy.json
 input.txt
 timer.py
 template.md
+
+*.iml
+*.idea
