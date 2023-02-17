@@ -1,5 +1,10 @@
 # Brute Force
 
+### 브루트 포스 - 재귀
+- [6603번 - 로또](https://www.acmicpc.net/problem/6603) `8-1`
+- [1182번 - 부분수열의 합](https://www.acmicpc.net/problem/1182) `8-1`
+- [14225번 - 부분수열의 합](https://www.acmicpc.net/problem/14225) `8-1*`
+
 ### 브루트 포스 - 순열
 - [2529 부등호](https://www.acmicpc.net/problem/2529) `1회차`
 - [1339 단어 수학](https://www.acmicpc.net/problem/1339) `1회차`

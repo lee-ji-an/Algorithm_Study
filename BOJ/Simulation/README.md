@@ -5,3 +5,5 @@
 ---
 - [17144번 - 미세먼지 안녕!](https://www.acmicpc.net/problem/17144) `7-2`
 - [17143번 - 낚시왕](https://www.acmicpc.net/problem/17143) `7-2*`
+- [17140번 - 이차원 배열과 연산](https://www.acmicpc.net/problem/17140) `8-1*`
+- [17780번 - 새로운 게임](https://www.acmicpc.net/problem/17780) `8-1`
