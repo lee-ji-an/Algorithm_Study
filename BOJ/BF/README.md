@@ -4,6 +4,9 @@
 - [6603번 - 로또](https://www.acmicpc.net/problem/6603) `8-1`
 - [1182번 - 부분수열의 합](https://www.acmicpc.net/problem/1182) `8-1`
 - [14225번 - 부분수열의 합](https://www.acmicpc.net/problem/14225) `8-1*`
+- [14500번 - 테트로미노](https://www.acmicpc.net/problem/14500) `8-2`
+- [14500번 - 테트로미노](https://www.acmicpc.net/problem/14500) `8-2*`
+- [16197번 - 두 동전](https://www.acmicpc.net/problem/16197) `8-2`
 
 ### 브루트 포스 - 순열
 - [2529 부등호](https://www.acmicpc.net/problem/2529) `1회차`

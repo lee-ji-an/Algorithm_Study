@@ -7,3 +7,6 @@
 - [17143번 - 낚시왕](https://www.acmicpc.net/problem/17143) `7-2*`
 - [17140번 - 이차원 배열과 연산](https://www.acmicpc.net/problem/17140) `8-1*`
 - [17780번 - 새로운 게임](https://www.acmicpc.net/problem/17780) `8-1`
+---
+- [17837번 - 새로운 게임 2](https://www.acmicpc.net/problem/17837) `8-2*`
+- [17822번 - 원판 돌리기](https://www.acmicpc.net/problem/17822) `8-2`
