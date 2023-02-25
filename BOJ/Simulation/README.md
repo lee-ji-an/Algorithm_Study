@@ -10,3 +10,6 @@
 ---
 - [17837번 - 새로운 게임 2](https://www.acmicpc.net/problem/17837) `8-2*`
 - [17822번 - 원판 돌리기](https://www.acmicpc.net/problem/17822) `8-2`
+---
+- [16939번 - 2×2×2 큐브](https://www.acmicpc.net/problem/16939) `9-1*`
+- [16974번 - 레벨 햄버거](https://www.acmicpc.net/problem/16974) `9-1`
