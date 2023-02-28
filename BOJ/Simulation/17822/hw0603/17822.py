@@ -53,8 +53,8 @@ for tc in range(T):
 
             for i in range(N):
                 for j in range(M):
-                    if not (cylinder[i][j]):
-                        cylinder[i][j] = cylinder[i][j]-1 if cylinder[i][j] > avg else cylinder[i][j]+1
+                    if (cylinder[i][j]):
+                        cylinder[i][j] = cylinder[i][j]-1 if cylinder[i][j] > avg else cylinder[i][j]+1 if cylinder[i][j] < avg else cylinder[i][j]
     else:
         break
 
