@@ -13,3 +13,7 @@
 ---
 - [16939번 - 2×2×2 큐브](https://www.acmicpc.net/problem/16939) `9-1*`
 - [16974번 - 레벨 햄버거](https://www.acmicpc.net/problem/16974) `9-1`
+---
+- [20061번 - 모노미노도미노 2](https://www.acmicpc.net/problem/20061) `10`
+- [19236번 - 청소년 상어](https://www.acmicpc.net/problem/19236) `10`
+- [19237번 - 어른 상어](https://www.acmicpc.net/problem/19237) `10*`

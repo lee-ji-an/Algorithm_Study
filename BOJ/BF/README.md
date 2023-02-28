@@ -11,6 +11,9 @@
 - [16197번 - 두 동전](https://www.acmicpc.net/problem/16197) `9-1`
 - [16198번 - 에너지 모으기](https://www.acmicpc.net/problem/16198) `9-1*`
 - [9663번 - N-Queen](https://www.acmicpc.net/problem/9663) `9-1`
+---
+- [2580번 - 스도쿠](https://www.acmicpc.net/problem/2580) `10`
+- [4574번 - 스도미노쿠](https://www.acmicpc.net/problem/4574) `10*`
 
 ### 브루트 포스 - 순열
 - [2529 부등호](https://www.acmicpc.net/problem/2529) `1회차`

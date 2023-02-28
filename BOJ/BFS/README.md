@@ -25,3 +25,9 @@
 - [12906번 - 새로운 하노이 탑](https://www.acmicpc.net/problem/12906) `5-2`
 - [17141번 - 연구소 2](https://www.acmicpc.net/problem/17141) `5-1`
 - [17142번 - 연구소 3](https://www.acmicpc.net/problem/17142) `5-2`
+##
+- [2573번 - 빙산](https://www.acmicpc.net/problem/2573) `10`
+- [2636번 - 치즈](https://www.acmicpc.net/problem/2636) `10*`
+- [2668번 - 숫자 고르기](https://www.acmicpc.net/problem/2668) `10`
+- [7569번 - 토마토](https://www.acmicpc.net/problem/7569) `10`
+- [9205번 - 맥주 마시면서 걸어가기](https://www.acmicpc.net/problem/9205) `10*`
