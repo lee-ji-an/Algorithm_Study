@@ -1,27 +1,28 @@
 n = int(input())
-visited = [[False] * n for _ in range(n)]
+queens = [-1 for _ in range(n)]
 ans = 0
 
-def dfs(idx, visited):
+
+def check(row, n, q):
+    if n in q:
+        return False
+    for i in range(row+1):
+        if q[row-i] == n-i or q[row-i] == n+i:
+            return False
+    return True
+
+
+def recur(idx, q):
     global ans
     if idx == n:
         ans += 1
         return
     
-    vi = [v[:] for v in visited]
-    
-    print("dfs", idx, visited)
-    
     for i in range(n):
-        if not vi[idx][i]:
-            for j in range(n - idx):
-                vi[idx + j][i] = True
-                if i + j < n:
-                    vi[idx + j][i + j] = True
-                if 0 <= i - j:
-                    vi[idx + j][i - j] = True
-                    
-                dfs(idx + 1, vi)
-
-dfs(0, visited)
+        if check(idx, i, q):
+            q[idx] = i
+            recur(idx + 1, q)
+            q[idx] = -1
+        
+recur(0, queens)
 print(ans)
