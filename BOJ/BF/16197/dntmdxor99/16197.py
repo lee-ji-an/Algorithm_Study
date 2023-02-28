@@ -14,7 +14,10 @@ def bfs():
                     ny1, nx1 = y1, x1
                 if maps[ny2][nx2] == '#':
                     ny2, nx2 = y2, x2
-                dq.append([ny1, nx1, ny2, nx2, cnt + 1])
+                if (ny1, nx1, ny2, nx2) not in visited and (ny2, nx2, ny1, nx1) not in visited:
+                    visited.add((ny1, nx1, ny2, nx2))
+                    visited.add((ny2, nx2, ny1, nx1))
+                    dq.append([ny1, nx1, ny2, nx2, cnt + 1])
             elif not (0 <= ny1 < n and 0 <= nx1 < m) and not(0 <= ny2 < n and 0 <= nx2 < m):
                 continue
             else:
@@ -31,6 +34,8 @@ if __name__ == "__main__":
             if maps[i][j] == 'o':
                 tp.append(i)
                 tp.append(j)
+    visited = set()
+    visited.add(tuple(tp))
     dq = deque()
     dq.append([*tp, 0])
 
