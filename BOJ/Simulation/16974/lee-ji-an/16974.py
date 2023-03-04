@@ -12,7 +12,7 @@ def recursion(lv, x):
 
     if x <= total[lv - 1] + 2:  # x 가 중간에 패티가 들어가는 지점보다 같거나 왼쪽일 때
         if x == total[lv - 1] + 2:
-            return recursion(lv - 1, x - 2) + 1  # x 가 중간에 패티가 들어가는 지점까지일 때
+            return patty[lv - 1] + 1  # x 가 중간에 패티가 들어가는 지점까지일 때
         else:
             return recursion(lv - 1, x - 1)  # # x 가 중간에 패티가 들어가는 지점보다 왼쪽일 때
     else:
