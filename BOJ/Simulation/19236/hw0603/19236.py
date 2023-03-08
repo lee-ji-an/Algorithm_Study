@@ -49,7 +49,7 @@ def dfs(row_shark: int, col_shark: int, score: int, board: list[list[list[int]]]
 
     # 상어가 물고기 먹음
     dir_shark = board[row_shark][col_shark][1]
-    for i in range(1, 5):
+    for i in range(1, 4):
         nr = row_shark + dr[dir_shark]*i
         nc = col_shark + dc[dir_shark]*i
         if ((0 <= nr < 4 and 0 <= nc < 4) and board[nr][nc][0] > 0):
