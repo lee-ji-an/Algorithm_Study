@@ -12,7 +12,7 @@ if __name__ == "__main__":
         c.append(t3)
         d.append(t4)
 
-    ab, cd = [i + j for i in a for j in b], [i + j for i in c for j in d]
+    ab, cd = (i + j for i in a for j in b), (i + j for i in c for j in d)
 
     cnt = 0
     cd = Counter(cd)
