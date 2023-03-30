@@ -21,10 +21,7 @@ def recur(v):
 # 위상 정렬
 topo = []
 visited = [False] * (n+1)
-for i in range(1, n+1):
-    if not visited[i]:
-        recur(i)
-
+recur(1)
 topo.reverse()
 
 # 칭찬 받은 사원 본인만 우선 기록
