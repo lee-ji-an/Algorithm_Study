@@ -17,3 +17,9 @@
 스택 활용하는 문제에 익숙하지 않다... "같은 수로 만들기" 문제와 유사하다고 생각은 했었는데 그 문제는 스택으로 안 풀었어서 `O(N^2)` 풀이밖에 생각이 안 나서 구글링했다.  
 설명을 보고 구현한 후에, `L->R 후 R->L` 하는 것과, `R->L 후 L->R` 하는 것이 동일할 것이라고 생각해서 `iterator` 변수를 설정하는 outer loop에서 `set`으로 선언했는데, 자꾸 랜덤한 퍼센트에서 "틀렸습니다"가 떴다.  
 알고 보니 `L->R 후 R->L` 순서대로 계산해야만 정답이 나오는데 왜지..?
+
+
+## ℹ️ 참고
+이와 같은 스택 기법을 단조 스택(Monotonic Stack)이라고 한다.  
+[참고링크1](https://velog.io/@ung7497/Monotone-Stack)  
+[참고링크2](https://justicehui.github.io/medium-algorithm/2019/01/01/monotoneStack)
