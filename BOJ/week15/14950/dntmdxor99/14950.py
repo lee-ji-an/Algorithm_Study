@@ -10,7 +10,11 @@ def my_par(x):      # 내 부모를 찾음
 
 
 def union(x, y):        # 합침
-    par[my_par(y)] = my_par(x)
+    par_x = my_par(x)
+    while y != par[y]:
+        temp, y = y, par[y]
+        par[temp] = par_x
+    par[y] = par_x
 
 
 if __name__ == "__main__":
