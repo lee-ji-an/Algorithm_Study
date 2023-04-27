@@ -17,7 +17,7 @@ heap = []
 
 def bfs(start_point):
     heapq.heappush(heap, (0, 0, start_point[0], start_point[1]))
-    visited[start_point[0]][start_point[1]] = 0
+    visited[start_point[0]][start_point[1]] = True
     while heap:
         garbage_cnt, garbage_around_cnt, y, x = heapq.heappop(heap)
         for i in range(4):
