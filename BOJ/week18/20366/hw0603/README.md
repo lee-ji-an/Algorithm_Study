@@ -11,3 +11,11 @@
 ## 🙂 마무리
 이 왜 투포인터?  
 파이썬 3.10에서 도입된 `itertools.pairwise()`는 때때로 매우 유용하다..!
+  
+```python
+from itertools import combinations as c, pairwise as p
+N,s=int(input()),list(map(int,input().split()))
+g=lambda x:s[x[0]]+s[x[1]]
+print(min(g(a)-g(b)for b,a in p(sorted(c(range(N),2),key=g))if(len(set(b+a))>3)))
+```
+숏코딩 꿀잼
