@@ -1,35 +1,57 @@
 import sys
+from itertools import combinations
 input = sys.stdin.readline
 
+def check_complex(complexes):
+    for i in range(len(complexes)):
+        for j in range(i+1, len(complexes)):
+            if complexes[i].imag != complexes[j].imag and complexes[i].real != complexes[j].real and complexes[i].real != complexes[j].imag and complexes[i].imag != complexes[j].real:
+                return True
+    
+    return False
 
-def logic(elsa, left, right):
-    # elsa의 범위 안에서 선택하여 최솟값을 반환함
-    val = sys.maxsize
+def check_complexes(complex1, complex2):
+    for c1 in complex1:
+        for c2 in complex2:
+            if c1.imag != c2.imag and c1.real != c2.real and c1.imag != c2.real and c1.real != c2.imag:
+                return True
+    
+    return False
 
-    while left < right:
-        anna = maps[left] + maps[right]
-        if elsa > anna:     # 엘사가 더 크다면 안나를 키워야 함
-            left += 1
-        elif elsa < anna:       # 그 반대로
-            right -= 1
-        else:       # 만약 둘이 같다면 0이 되는 최솟값이 나오는 것이므로 끝냄
+n = int(input())
+snowballs = list(map(int, input().split()))
+snowballs.sort()
+answer = sys.maxsize
+
+dic = dict()
+height_list = []
+
+for head, body in combinations([i for i in range(n)], 2):
+    height = snowballs[head] + snowballs[body]
+    height_list.append(height)
+    if height in dic:
+        dic[height].append(complex(head, body))
+    else:
+        dic[height] = [complex(head, body)]
+
+height_list = list(set(height_list))
+height_list.sort()
+
+for i in range(0, len(height_list)):
+    t = dic[height_list[i]]
+    if len(t) >= 2:
+        if check_complex(t):
             print(0)
-            exit(0)
+            exit()
 
-        val = min(val, abs(elsa - anna))        # 최솟값을 반환해야 함
+    for j in range(i-1, -1, -1):
+        if check_complexes(dic[height_list[i]], dic[height_list[j]]):
+            answer = min(answer, abs(height_list[i] - height_list[j]))
+            break
+    
+    for j in range(i+1, len(height_list)):
+        if check_complexes(dic[height_list[i]], dic[height_list[j]]):
+            answer = min(answer, abs(height_list[i] - height_list[j]))
+            break
 
-    return val
-
-
-if __name__ == "__main__":
-    n = int(input())
-    maps = list(map(int, input().split()))
-    maps.sort()
-
-    ans = sys.maxsize
-    for i in range(n):
-        for j in range(n - 1, max(i + 2, 0), -1):
-            # elsa의 범위를 줄임. 이때 안에 최소 2개의 원소는 들어갈 수 있도록 만들어야 함
-            ans = min(ans, logic(maps[i] + maps[j], i + 1, j - 1))
-
-    print(ans)
+print(answer)
