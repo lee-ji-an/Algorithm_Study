@@ -3,7 +3,7 @@ import sys
 
 N = int(sys.stdin.readline())
 room = [list(map(int, list(sys.stdin.readline().strip()))) for _ in range(N)]
-visited = [[sys.maxsize] * N for _ in range(N)]  # 방문했을 때 벽 깬 횟수
+visited = [[False] * N for _ in range(N)]  # 방문했을 때 벽 깬 횟수
 
 dr = (1, -1, 0, 0)
 dc = (0, 0, 1, -1)
@@ -21,11 +21,8 @@ while (q):
 
         if not (0 <= nr < N and 0 <= nc < N):
             continue  # 범위 밖 Skip
+        if (visited[nr][nc]):
+            continue  # 중복방문 제거
 
-        if (visited[nr][nc] > cnt):  # 현재 노드보다 이전에 벽을 더 많이 깬 채로 방문됐을 경우: 다시 방문 필요
-            if (room[nr][nc] == 0):  # 벽이라면 깨고 지나감
-                visited[nr][nc] = cnt+1
-                heapq.heappush(q, (cnt+1, nr, nc))
-            else:
-                visited[nr][nc] = cnt  # 벽이 아니면 그냥 지나감
-                heapq.heappush(q, (cnt, nr, nc))
+        visited[nr][nc] = True
+        heapq.heappush(q, (cnt if room[nr][nc] else cnt + 1, nr, nc))
