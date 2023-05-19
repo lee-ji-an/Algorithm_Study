@@ -24,12 +24,12 @@ def two_pointer():
 
 
 def math():
-    from math import sqrt
+    from math import sqrt, pow
     ans = []
-    for i in range(1, n + 1):
-        val = i**2 - n
+    for i in range(1, n):
+        val = pow(i, 2) - n
         if val > 0:
-            if sqrt(i**2 - n).is_integer():
+            if sqrt(val).is_integer():
                 ans.append(i)
 
     if ans:
