@@ -1,5 +1,5 @@
 ## Info
-[14391 종이조각](https://www.acmicpc.net/problem/14391)
+[14391 종이 조각](https://www.acmicpc.net/problem/14391)
 
 ## 💡 풀이 방법 요약
 2차원 배열을 긴 1차원 배열로 생각하고, 0 ~ 2^(N*M) 까지의 모든 비트열을 대상으로 검사를 진행한다.
