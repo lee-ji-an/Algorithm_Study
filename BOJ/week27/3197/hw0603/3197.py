@@ -52,9 +52,10 @@ def BFS(water, swan, W, H, lake):
                 
                 # 백조가 갈 수 있는 공간이면서 아직 방문하지 않은 곳을 덱에 push
                 if (lake[nr][nc] == '.' or lake[nr][nc] == 'L'):
-                    lake[nr][nc] = time  # 방문처리. 꼭 값이 time이 아니여도 됨
                     swan.append((nr, nc))
+                elif (lake[nr][nc] == 'X'):
                     temp.append((nr, nc))
+                lake[nr][nc] = time  # 방문처리. 꼭 값이 time이 아니여도 됨
         swan = temp
         time += 1
     
