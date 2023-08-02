@@ -12,14 +12,11 @@ def updateCntMaps(cnt, y, x):
             if 0 <= nextY < h and 0 <= nextX < w:
                 match maps[nextY][nextX]:
                     case '.':       # 빈 칸
-                        if cntMaps[nextY][nextX] >= cnt:        # 만약 기존의 거울 개수보다 적거나 같게 사용한다면
-                            if chkMaps[nextY][nextX] == False:      # 만약 방문했었다면
-                                cntMaps[nextY][nextX] = cnt
-                                chkMaps[nextY][nextX] = True        # 방문 표시
-                                heapq.heappush(hq, (cnt, nextY, nextX))
-                                curY, curX = nextY, nextX       # 한 쪽으로 쭉 나아가기 위해
-                            else:
-                                break
+                        if cntMaps[nextY][nextX] > cnt or (cntMaps[nextY][nextX] == cnt and chkMaps[nextY][nextX] == False):        # 만약 기존의 거울 개수보다 적거나 같게 사용한다면
+                            cntMaps[nextY][nextX] = cnt
+                            chkMaps[nextY][nextX] = True        # 방문 표시
+                            heapq.heappush(hq, (cnt, nextY, nextX))
+                            curY, curX = nextY, nextX       # 한 쪽으로 쭉 나아가기 위해
                         else:
                             break
                     case '*':
