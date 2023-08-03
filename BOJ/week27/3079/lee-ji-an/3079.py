@@ -1,5 +1,5 @@
 import sys
-inpput = sys.stdin.readline
+input = sys.stdin.readline
 
 N, M = map(int, input().split())
 time_list = []
