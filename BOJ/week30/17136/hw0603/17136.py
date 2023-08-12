@@ -19,38 +19,26 @@ def dfs(matrix: list[list[int]], remain: tuple):
 
     # 2. 5가지 색종이에 대해 탐색
     child_results = []
-    
-    # # 2-1) 1x1 색종이
-    # if (remain[0] > 0):
-    #     matrixCopy = [r[:] for r in matrix]
-    #     data = list(remain)
-    #     data[0] -= 1
-    #     data = tuple(data)
-    #     matrixCopy[row][col] = 9  # 가려진 것으로 마킹
-    #     child_results.append(dfs(matrixCopy, remain=data))
-    
-    # 1x1 색종이 ~ 5x5 색종이
-    for k in range(1, 6): # KxK 색종이
+    for k in range(1, 6):  # 1x1 색종이 ~ 5x5 색종이 시뮬레이션 후 재귀호출
         isAllCovered = True
         if (remain[k-1] > 0 and row < 10-k+1 and col < 10-k+1):
-            matrixCopy = [r[:] for r in matrix]
-            data = list(remain); data[k-1] -= 1; data = tuple(data)
+            matrixCopy = [r[:] for r in matrix]  # 깊은 복사
 
-            # isAllCovered = True
             for i in range(row, row+k):
                 for j in range(col, col+k):
                     if (matrixCopy[i][j] != 1):
                         isAllCovered = False
                         break
                     else:
-                        matrixCopy[i][j] = 9
+                        matrixCopy[i][j] = 9  # 색종이가 붙은 영역으로 마킹
                 if not (isAllCovered):
                     break
             else:
-                child_results.append(dfs(matrixCopy, remain=data))
+                data = list(remain); data[k-1] -= 1; data = tuple(data)  # 남은 색종이 수 줄이기
+                child_results.append(dfs(matrixCopy, remain=data))  # for ~ else 구문: 붙일 수 있는 경우에만 재귀호출
         
         if not (isAllCovered):
-            break
+            break  # NxN 색종이를 붙일 수 없다면, 그보다 더 큰 색종이도 붙일 수 없으므로 바로 break
 
     result = max(child_results) if child_results else -sys.maxsize
 
@@ -58,5 +46,3 @@ def dfs(matrix: list[list[int]], remain: tuple):
 
 ans = dfs(matrix.copy(), (5, 5, 5, 5, 5))
 print(25-ans if ans >= 0 else -1)
-
-# print(*matrix, sep='\n')
