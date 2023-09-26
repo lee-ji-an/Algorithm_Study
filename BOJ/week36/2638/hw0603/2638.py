@@ -81,7 +81,7 @@ def removeCheese(row, col):
     
     # print(*matrix, sep='\n')
     # print(f"{day+1}일차에 {len(melting_q)}개 녹음")
-    tmp = set()
+    # tmp = set()
     while (melting_q):
         row, col = melting_q.popleft()
         matrix[row][col] = 9
