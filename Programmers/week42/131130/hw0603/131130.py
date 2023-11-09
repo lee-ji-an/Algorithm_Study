@@ -1,22 +1,35 @@
-def bit_count(num):
-    if (num <= 5):
-        return (0, 1, 2, 2, 3, 4)[num]  # "11011" 패턴에서 num에 따른 '1'의 합
+from collections import defaultdict
 
-    # 5^maxexp가 num을 넘지 않는 최대 승수 구함
-    maxexp = 1
-    while (5 ** (maxexp + 1) < num):
-        maxexp += 1
-
-    group = num // (5 ** maxexp)  # 패턴 중 몇번째 그룹까지 완전히 속하는가? (1-base)
-    remainder = num % (5 ** maxexp)  # 11011 패턴에 속하지 않고 남는 나머지 개수
-
-    # 3개 이상의 그룹에 속하는 경우, 3번째 그룹은 0...0 이므로 4^maxexp개를 하나 덜 더해줘야 함
-    answer = (group if group < 3 else group-1) * (4 ** maxexp)
+def solution(cards):
+    """
+    그룹으로 나누고, 각 그룹 중 젤큰거 두개 골라서 크기 곱 반환
+    """
     
-    # 2개의 그룹에 속하는 경우, 3번째 그룹은 모두 0이므로 더 계산할 필요 없음
-    # 다른 모든 경우, 다음 그룹에 살짝 걸치는(remainder) 만큼의 1 개수를 더해줘야 함
-    return answer + (0 if group == 2 else bit_count(remainder))
+    groupData = defaultdict(set)
+    cards = [None] + cards
     
-
-def solution(_, l, r):
-    return bit_count(r) - bit_count(l-1)
+    idx = 1
+    groupIdx = 0
+    visited = set()
+    currentVal = cards[idx]
+    while (len(visited)+1 < len(cards)):
+        if (currentVal not in groupData[groupIdx]):
+            groupData[groupIdx].add(currentVal)
+            visited.add(currentVal)
+            currentVal = cards[currentVal]
+        else:
+            # 사이클 만났을 때
+            groupIdx += 1
+            for i in range(1, len(cards)):
+                if (cards[i] in visited):
+                    continue
+                currentVal = cards[i]
+                break
+    
+    if (len(groupData) <= 1):
+        return 0
+    
+    group_sizes = sorted(len(group) for group in groupData.values())
+    
+    return group_sizes[-1] * group_sizes[-2]
+    
