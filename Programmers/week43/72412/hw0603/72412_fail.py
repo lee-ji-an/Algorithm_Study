@@ -24,7 +24,7 @@ def solution(info, query):
     
     bitData = {
         "cpp": 1, "java": 2, "python": 3,
-        "backend": 4, "frontend":5,
+        "backend": 4, "frontend": 8,
         "junior": 16, "senior": 32,
         "chicken": 64, "pizza": 128
     }
