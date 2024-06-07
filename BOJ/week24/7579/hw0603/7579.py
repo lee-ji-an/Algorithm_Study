@@ -7,7 +7,7 @@ cost = [0] + list(map(int, sys.stdin.readline().split()))
 dp = [[0 for _ in range(sum(cost)+1)] for _ in range(N+1)]  # dp[i][j]: i번째 앱까지 조사했을 때 j비용으로 확보할 수 있는 최대 메모리
 
 for i in range(1, N+1):  # 앱
-    for j in range(1, sum(cost)+1):  # 비용
+    for j in range(sum(cost)+1):  # 비용
         # 현재 앱을 끄는 비용이 j보다 크면 끌 수 없으므로 이전 앱까지의 최대 메모리를 그대로 가져옴
         if (j < cost[i]):
             dp[i][j] = dp[i-1][j]
